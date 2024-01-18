@@ -25,7 +25,9 @@ export default function App() {
   }
   return (
     <View style={styles.appContainer}>
-      <Button title='Add New Goal' color='green' onPress={setAddGoalHandler} />
+      <View style={styles.buttonSize}>
+        <Button title='Add New Goal' color='green' onPress={setAddGoalHandler} />
+      </View>
       <GoalInput visible={modalIsVisible} onAddGoal={addGoalHandler} onCancel={setEndGoalHandler} />
       <FlatList
         data={courseGoals}
@@ -55,9 +57,18 @@ export default function App() {
 const styles = StyleSheet.create({
   appContainer: {
     padding: 30,
-    marginTop: 50,
+    gap:30,
+    
 
   },
+  buttonSize:{
+    width:130,
+    marginLeft:180,
+    marginTop:50,
+    padding:10,
+  
+
+  }
 
 
 });
